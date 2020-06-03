@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artesãos de Osasco e Região • Página Inicial</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<!-- Stylesheet
+    ================================================== -->
+	<link rel="stylesheet" type="text/css"  href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	
+<script src="js/slides.min.jquery.js">
+	
+</script>
+
+<!-- SCRIPT SLIDES DESKTOP -->
+	<script>
+	$(function(){
+		$('#slides').slides({
+			preload: true,
+			preloadImage: 'img/loading.gif',
+			play: 4000,
+			pause: 2000,
+			hoverPause: true,
+			animationStart: function(current){
+				$('.caption').animate({
+					bottom:0
+				},0);
+				if (window.console && console.log) {
+					// example return of current slide number
+					console.log('animationStart on slide: ', current);
+				};
+			},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},0);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0,
+					},0);
+				}
+			});
+		});
+	</script>		
+		
+<!-- SCRIPT SLIDES-MOB -->
+<script> 
+		$(function(){
+			$('#slides-mob').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 4000,
+				pause: 2000,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+							bottom:0
+					},0);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+					animationComplete: function(current){
+						$('.caption').animate({
+							bottom:0
+						},0);
+						if (window.console && console.log) {
+							// example return of current slide number
+								console.log('animationComplete on slide: ', current);
+						};
+					},
+					slidesLoaded: function() {
+						$('.caption').animate({
+							bottom:0,
+						},0);
+					}
+				});
+		});
+</script>
+	
+<!-- SCRIPT TOPNAV (header responsivo) -->		
+<script>		
+	function myFunction() {
+	  var x = document.getElementById("myLinks");
+	  if (x.style.display === "block") {
+	    x.style.display = "none";
+	  } else {
+	    x.style.display = "block";
+	  }
+	}
+</script>		
+		
+<!-- FONT FACE -->
+
+<style type="text/css">
+
+@font-face{
+	font-family:Roboto-Light;
+	src: url(fonts/Roboto-Light.eot);
+	src: url(fonts/Roboto-Light.ttf);
+	src: url(fonts/Roboto-Light.woff);
+}
+
+@font-face{
+	font-family:Roboto-Bold;
+	src: url(fonts/Roboto-Bold.eot);
+	src: url(fonts/Roboto-Bold.ttf);
+	src: url(fonts/Roboto-Bold.woff);
+}
+
+@font-face{
+	font-family:Roboto-Regular;
+	src: url(fonts/Roboto-Regular.eot);
+	src: url(fonts/Roboto-Regular.ttf);
+	src: url(fonts/Roboto-Regular.woff);
+}
+
+
+
+</style>		
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- HEADER DESKTOP -->
+<div id="header">
+  <div class="container"> 
+    <div class="logo">
+      <img src="img/artesaosdeosasco_original.svg" height="70px" />
+  	</div>
+    
+    <div class="menu">
+    	<ul>
+        	<li><a href="index.html" class="activebuscar">Buscar</a></li>
+        	<li><a href="indicar.html" class="">Indicar Artesão</a></li>
+        	<li><a href="sobre.html" class="">Sobre</a></li>
+        	<li><a href="contato.html" class="">Contato</a></li>
+        	<li><a href="duvidas.html" class="">Dúvidas</a></li>
+    	</ul>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER MOBILE -->
+<div class="topnav">
+	<img class="logo-mob" src="img/artesaosdeosasco_original.svg" height="50px" />
+	  <!-- Navigation links (hidden by default) -->
+	<div id="myLinks">
+   	<a href="index.html">Buscar</a>
+   	<a href="indicar.html">Indicar Artesão</a>
+   	<a href="sobre.html">Sobre</a>
+   	<a href="contato.html">Contato</a>
+   	<a href="duvidas.html">Dúvidas</a>
+	  </div>
+	  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <img src="img/icon-menu.png"/>
+	  </a>
+</div>
+
+<!-- BANNER DESKTOP -->
+<div id="example">
+	<div id="slides">
+		<div class="slides_container">
+						<div class="slide">
+						<a href="sobre.html"><img src="img/banner_slide_sobre.jpg" alt="Slide 1"/></a>
+						<div class="caption">
+							<p class="cap">Uma iniciativa dos artesãos, para os artesãos.<br>Movimentando o artesanato na 							região de Osasco.</p>
+							<p class="button-saiba"><a href="sobre.html">saiba mais</a></p>
+						</div>
+						
+					</div>
+						<div class="slide">
+						<a href="indicar.html"><img src="img/banner_slide_indicar.jpg" alt="Slide 2"/></a>
+						<div class="caption">
+							<p class="cap">Conhece artesãos em osasco e região?<br>Indique-os e ajude o comércio local.</p>
+							<p class="button-indicar"><a href="indicar.html">indicar</a></p>
+						</div>
+					</div>
+						<div class="slide">
+						<a href="resultados.html" ><img src="img/banner_slide_protecao.jpg" alt="Slide 3"/></a>
+						<div class="caption">
+							<p class="cap">Encontre artesãos produzindo máscaras de proteção no seu bairro.<br>Ajude a 							movimentar o comércio local.</p>
+							<p class="button-confira"><a href="resultados.html">clique e confira</a></p>
+						</div>
+					</div>
+						<div class="slide">
+						<a href="resultados.html" ><img src="img/banner_slide_alimentacao.jpg" alt="Slide 4"/></a>
+						<div class="caption">
+							<p class="cap">Arte para ver, usar e comer.<br>Encontre comida artesanal no seu bairro.</p>
+							<p class="button-confira"><a href="resultados.html">clique e confira</a></p>
+						</div>
+					</div>
+			</div>
+				
+			<a href="#" class="prev"><img src="img/arrow_prev.png" width="36" height="47" alt="Arrow Prev"></a>
+			<a href="#" class="next"><img src="img/arrow_next.png" width="36" height="47" alt="Arrow Next"></a>
+				
+	</div>
+			
+</div><!--fim da div banner desaktop-->
+
+<!-- BANNER MOBILE-->
+<div id="example-mob">
+	<div id="slides-mob">
+		<div class="slides_container">
+        <div class="slide">
+          <a href="sobre.html"><img src="img/banner_slide-mob_sobre.jpg" alt="Slide 1"></a>
+          <div class="caption">
+            <p class="cap">Uma iniciativa dos artesãos, para os artesãos.<br>Movimentando o artesanato na 							região de Osasco.</p>
+            <p class="button-saiba"><a href="sobre.html">saiba mais</a></p>
+          </div>
+          
+        </div>
+        <div class="slide">
+          <a href="indicar.html"><img src="img/banner_slide-mob_indicar.jpg" alt="Slide 2"></a>
+          <div class="caption">
+            <p class="cap">Conhece artesãos em osasco e região?<br>Indique-os e ajude o comércio local.</p>
+            <p class="button-indicar"><a href="indicar.html">indicar</a></p>
+          </div>
+        </div>
+        <div class="slide">
+          <a href="resultados.html" ><img src="img/banner_slide-mob_protecao.jpg" alt="Slide 3"></a>
+          <div class="caption">
+            <p class="cap">Encontre artesãos produzindo máscaras de proteção no seu bairro.<br>Ajude a 							movimentar o comércio local.</p>
+            <p class="button-confira"><a href="resultados.html">clique e confira</a></p>
+          </div>
+        </div>
+        <div class="slide">
+          <a href="resultados.html" ><img src="img/banner_slide-mob_alimentacao.jpg" alt="Slide 4"></a>
+          <div class="caption">
+            <p class="cap">Arte para ver, usar e comer.<br>Encontre comida artesanal no seu bairro.</p>
+            <p class="button-confira"><a href="resultados.html">clique e confira</a></p>
+          </div>
+        </div>
+			</div>
+				
+			<a href="#" class="prev"><img src="img/arrow_prev.png" width="36" height="47" alt="Arrow Prev"></a>
+      <a href="#" class="next"><img src="img/arrow_next.png" width="36" height="47" alt="Arrow Next"></a>
+
+				
+	</div>
+			
+</div><!--fim da div banner Mobile-->
+
+<!-- CONTEUDO -->
+<div id="conteudo">
+  
+  <!-- DESC -->
+  <div class="desc">
+    <p>Selecione abaixo o seu bairro, ou o mais próximo de você disponível na lista. Depois, selecione o produto que procura.</p>
+  </div>
+  
+  <!-- FILTER -->
+  <div class="filter">
+    <select name="cidade" id="city">
+      <option value="">Selecione a cidade</option>
+      <option value="osasco">Osasco</option>
+      <option value="barueri">Barueri</option>
+      <option value="itapevi">Itapevi</option>
+      <option value="carapicuiba">Carapicuíba</option>
+      <option value="jandira">Jandira</option>
+      <option value="cotia">Cotia</option>
+      <option value="taboao">Taboão da Serra</option>
+    </select>
+    <select name="bairro">
+      <option value="">Escolha um bairro</option>
+    </select>
+    <select name="Produto">
+      <option value="">Escolha um produto</option>
+    </select>
+    <p class="button-buscar">buscar</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results"></div>
+	
+	<!-- BANNER FOOTER DESKTOP-->
+	<div id="banner-footer">
+		<a href="indicar.html"><img src="img/banner_footer_indicar.jpg"/></a>
+		<p class="btn-banner"><a href="indicar.html">indicar</a></p>
+	</div>
+
+	<!-- BANNER FOOTER TABLET-->	
+	<div id="banner-footer-tab">
+		<a href="indicar.html"><img src="img/banner_footer-tab_indicar.jpg"/></a>
+		<p class="btn-banner"><a href="indicar.html">indicar</a></p>
+	</div>
+	
+	<!-- BANNER FOOTER MOBILE-->		
+	<div id="banner-footer-mob">
+		<a href="indicar.html"><img src="img/banner_footer-mob_indicar.jpg"/></a>
+		<p class="btn-banner"><a href="indicar.html">indicar</a></p>
+	</div>
+			
+</div>
+
+<!-- FOOTER -->
+<div id="footer">
+	<div class="footer-container">
+		<ul class="menu-footer">
+			<li><a href="sobre.html">Sobre</a></li>
+			<li><a href="indicar.html">Indicar artesão</a></li>
+			<li><a href="contato.html">Contato</a></li>
+			<li><a href="contato.html">Relatar um problema</a></li>
+			<li><a href="duvidas.html">Dúvidas</a></li>
+		</ul>
+		<p class="copyright">© 2020. Todos os direitos reservados.</p>
+		
+		<img class="logo-footer" src="img/artesaosdeosasco_negativo.svg" width="163px"/>		
+	
+	</div>	
+	
+</div>
+
+</body>
+<script>
+	$(document).on('change','#city',function(){
+		$.ajax({
+			url: "localhost:3333/region/"+$(this).val(),
+			context: document.body,
+			statusCode: {
+				200: function(req) {
+					console.log(req)
+				}
+			}
+		})
+	})
+</script>
