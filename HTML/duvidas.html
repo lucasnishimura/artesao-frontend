@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artesãos de Osasco e Região • Página Inicial</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<!-- Stylesheet
+    ================================================== -->
+	<link rel="stylesheet" type="text/css"  href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="js/slides.min.jquery.js">
+	
+</script>
+
+<!-- SCRIPT SLIDES DESKTOP -->
+	<script>
+	$(function(){
+		$('#slides').slides({
+			preload: true,
+			preloadImage: 'img/loading.gif',
+			play: 4000,
+			pause: 2000,
+			hoverPause: true,
+			animationStart: function(current){
+				$('.caption').animate({
+					bottom:0
+				},0);
+				if (window.console && console.log) {
+					// example return of current slide number
+					// console.log('animationStart on slide: ', current);
+				};
+			},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},0);
+					if (window.console && console.log) {
+						// example return of current slide number
+						// console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0,
+					},0);
+				}
+			});
+		});
+	</script>		
+		
+<!-- SCRIPT SLIDES-MOB -->
+<script> 
+		$(function(){
+			$('#slides-mob').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 4000,
+				pause: 2000,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+							bottom:0
+					},0);
+					if (window.console && console.log) {
+						// example return of current slide number
+						// console.log('animationStart on slide: ', current);
+					};
+				},
+					animationComplete: function(current){
+						$('.caption').animate({
+							bottom:0
+						},0);
+						if (window.console && console.log) {
+							// example return of current slide number
+								// console.log('animationComplete on slide: ', current);
+						};
+					},
+					slidesLoaded: function() {
+						$('.caption').animate({
+							bottom:0,
+						},0);
+					}
+				});
+		});
+</script>
+	
+<!-- SCRIPT TOPNAV (header responsivo) -->		
+<script>		
+	function myFunction() {
+	  var x = document.getElementById("myLinks");
+	  if (x.style.display === "block") {
+	    x.style.display = "none";
+	  } else {
+	    x.style.display = "block";
+	  }
+	}
+</script>		
+		
+<!-- FONT FACE -->
+
+<style type="text/css">
+
+@font-face{
+	font-family:Roboto-Light;
+	src: url(fonts/Roboto-Light.eot);
+	src: url(fonts/Roboto-Light.ttf);
+	src: url(fonts/Roboto-Light.woff);
+}
+
+@font-face{
+	font-family:Roboto-Bold;
+	src: url(fonts/Roboto-Bold.eot);
+	src: url(fonts/Roboto-Bold.ttf);
+	src: url(fonts/Roboto-Bold.woff);
+}
+
+@font-face{
+	font-family:Roboto-Regular;
+	src: url(fonts/Roboto-Regular.eot);
+	src: url(fonts/Roboto-Regular.ttf);
+	src: url(fonts/Roboto-Regular.woff);
+}
+
+
+
+</style>		
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- HEADER DESKTOP -->
+<div id="header">
+  <div class="container"> 
+    <div class="logo">
+      <img src="img/artesaosdeosasco_original.svg" height="70px" />
+  	</div>
+    
+    <div class="menu">
+    	<ul>
+        	<li><a href="index.html" >Buscar</a></li>
+        	<li><a href="indicar.html" class="">Indicar Artesão</a></li>
+        	<li><a href="sobre.html" class="">Sobre</a></li>
+        	<li><a href="contato.html" class="">Contato</a></li>
+        	<li><a href="duvidas.html" class="activebuscar">Dúvidas</a></li>
+    	</ul>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER MOBILE -->
+<div class="topnav">
+	<img class="logo-mob" src="img/artesaosdeosasco_original.svg" height="50px" />
+	  <!-- Navigation links (hidden by default) -->
+	<div id="myLinks">
+   	<a href="index.html">Buscar</a>
+   	<a href="indicar.html">Indicar Artesão</a>
+   	<a href="sobre.html">Sobre</a>
+   	<a href="contato.html">Contato</a>
+   	<a href="duvidas.html">Dúvidas</a>
+	  </div>
+	  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <img src="img/icon-menu.png"/>
+	  </a>
+</div>
+
+<!-- BANNER DESKTOP -->
+<div id="example">
+	<div id="slides">
+		<div class="slides_container">
+            <div class="slide">
+                <a href="sobre.html"><img src="img/banner_topo_duvidas.jpg" alt="Slide 1"/></a>
+                <div class="caption">
+                    <p class="cap cap-contact">A vida é um fazer e aprender constante.<br> No que já aprendemos neste projeto, preparamos uma lista<br> de possibilidades Para te ajudar. Confira abaixo!</p>
+                </div>
+            </div>
+  </div>	
+</div>
+			
+</div><!--fim da div banner desaktop-->
+
+<!-- BANNER MOBILE-->
+<div id="example-mob">
+	<div id="slides-mob">
+		<div class="slides_container">
+			<div class="slide">
+                <a href="sobre.html"><img src="img/banner_topo_duvidas.jpg" alt="Slide 1"/></a>
+                <div class="caption">
+                    <p class="cap cap-contact">A vida é um fazer e aprender constante.<br> No que já aprendemos neste projeto, preparamos uma lista<br> de possibilidades Para te ajudar. Confira abaixo!</p>
+                </div>
+            </div>
+			</div>
+	</div>
+			
+</div><!--fim da div banner Mobile-->
+
+<!-- CONTEUDO -->
+<div id="conteudo">
+  
+  <div class="duvidas-desc">
+    <h5>
+		<b class="duvidas-title">Como indicar artesãos?</b><br> 
+		No menu superior selecione INDICAR ARTESÃO. Insira os dados dos artesão, seus dados também e depois clique em INDICAR. Pronto. Após recebermos as informações, elas serão validadas e disponibilizadas no site.<br><br>
+		
+		<b class="duvidas-title">Quantos artesãos posso indicar?</b><br>
+		Não há limite de indicações por pessoa, caso conheça mais de um artesão, pode indicar todos eles. Ao final de cada indicação, haverá um link para indicar mais artesãos. Você também pode retornar ao formulário de indicação sempre que quiser, basta selecionar INDICAR ARTESÃO no menu superior.<br><br>
+		
+		<b class="duvidas-title">Eu posso indicar a mim mesmo como artesão?</b><br>
+		Sim. Após informar seus dados nos campos correspondentes ao artesão, basta selecionar “quem está indicando é o próprio artesãos”. Isso faz com que você não precise preencher os dados de quem está indicando.<br><br>
+		
+		<b class="duvidas-title">Quanto pago para me cadastrar no Portal dos Artesãos?</b><br>
+		O cadastro é totalmente gratuito. Esse projeto é voluntário e visa ajudar os artesãos nesse período de pandemia. Contudo, futuramente podem ser implementados recursos/benefícios que possam requerer algum tipo de pagamento, e/ou ação por parte dos artesãos. Não se preocupe, pois toda implementação/alteração nesse sentido será comunicada aos artesãos cadastrados.<br><br>
+		
+		<b class="duvidas-title">Como meus dados serão utilizados pelo Portal dos Artesãos?</b><br>
+		Seus dados serão utilizados apenas para divulgação no site, para que os usuários possam entrar em contato. E para comunicados do próprio Portal dos Artesãos, sobre novidades, esclarecimentos e demais comunicados que se fizerem necessários.<br><br>
+		
+		<b class="duvidas-title">O Portal dos Artesãos funciona como uma loja online onde posso vender meus produtos?</b><br>
+		Não. Por enquanto, o Portal dos Artesãos funciona como uma lista de profissionais, semelhante um classificado, onde são informados apenas os dados do artesão, alguns produtos que ele oferece e seus contatos. Todo o processo de venda (fornecimento de catálogo de produtos, preços, negociação e entrega) é feito direta e totalmente pelo artesão.<br><br>
+		
+		<b class="duvidas-title">Como saber se realmente venderei meus produtos?</b><br>
+		O Portal dos Artesãos não pode garantir que o artesão realizará vendas a partir do momento que se cadastrar no site, pois ele é apenas uma ferramenta que busca auxiliar na divulgação do trabalho dos artesãos locais. Nesse aspecto, é de total importância a ajuda do próprio artesão na divulgação do site, compartilhando em seu perfil nas redes sociais e demais formas de comunicação.<br><br>
+		
+		<b class="duvidas-title">Como negociar com os possíveis clientes que me encontraram no Portal dos Artesãos?</b><br>
+		Seja sempre solícito e educado. Oferecer mais de uma forma de pagamento pode aumentar suas chances de concluir a venda. Flexibilidade na negociação e entender a necessidade do cliente, podem ser diferenciais para o sucesso nas vendas.<br><br>
+		
+		<b class="duvidas-title">Não encontrei artesãos no meu bairro. O que posso fazer?</b><br>
+		Dependendo o momento em que realizar a consulta, o número de artesãos cadastrados pode ser pequeno. Caso conheça algum artesão, você pode enviar-lhe o link para que se cadastre, ou fazer você mesmo o cadastro, caso tenha os dados do artesão. Você também pode compartilhar o link do site em seus perfis nas redes sociais.<br><br>
+		
+		<b class="duvidas-title">O artesão não responde ao meu contato. Como proceder?</b><br>
+		Se você já tentou entrar em contato de todas as formas disponibilizadas no site (WhatsApp, telefone, redes sociais etc) mas mesmo assim não teve retorno, pode tentar entrar em contato com outro artesão de sua região ou a mais próxima disponível.<br><br>
+    </h5>
+  </div>
+	
+	<!-- BANNER FOOTER DESKTOP-->
+	<div id="banner-footer" class="banner-footer-duvidas">
+		<a href="contato.html"><img src="img/banner_footer_contato.jpg"/></a>
+		<p class="btn-banner"><a href="contato.html">entre em contato</a></p>
+	</div>
+
+	<!-- BANNER FOOTER TABLET-->	
+	<div id="banner-footer-tab" class="banner-footer-duvidas">
+		<a href="contato.html"><img src="img/banner_footer-tab_contato.jpg"/></a>
+		<p class="btn-banner"><a href="contato.html">entre em contato</a></p>
+	</div>
+	
+	<!-- BANNER FOOTER MOBILE-->		
+	<div id="banner-footer-mob" class="banner-footer-duvidas">
+		<a href="contato.html"><img src="img/banner_footer-mob_contato.jpg"/></a>
+		<p class="btn-banner"><a href="contato.html">entre em contato</a></p>
+	</div>
+			
+</div>
+
+<!-- FOOTER -->
+<div id="footer" class="footer-duvidas">
+	<div class="footer-container">
+		<ul class="menu-footer">
+			<li><a href="sobre.html">Sobre</a></li>
+			<li><a href="indicar.html">Indicar artesão</a></li>
+			<li><a href="contato.html">Contato</a></li>
+			<li><a href="contato.html">Relatar um problema</a></li>
+			<li><a href="duvidas.html">Dúvidas</a></li>
+		</ul>
+		<p class="copyright">© 2020. Todos os direitos reservados.</p>
+		
+		<img class="logo-footer" src="img/artesaosdeosasco_negativo.svg" width="163px"/>		
+	</div>	
+</div>
+<script>
+  $('.celular-form').mask('(99) 99999-9999')
+  $('.telefone-form').mask('(99) 9999-9999')
+
+
+  $(document).on('submit','.form-indicacao',function(event){
+    event.preventDefault();
+    
+    var data = $('form').serializeArray().reduce(function(obj, item) {
+      obj[item.name] = item.value;
+      return obj;
+    }, {});
+   
+    $.ajax({
+      type: "POST",
+      url: "https://artesao-api.herokuapp.com/email",
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+			statusCode: {
+				200: function(req) {
+          console.log(req)
+          Swal.fire({
+            icon: 'success',
+            title: 'Sucesso!',
+            text: 'Obrigado por entrar em contato com a gente! Em breve retornaremos o email!',
+            onClose: () => {
+              window.location='index.html'
+            }
+          })
+				}
+			}
+		})
+    console.log(data)
+    event.preventDefault()
+  })
+</script>
+</body>

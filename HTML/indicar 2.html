@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal dos Artesãos • Indicar Artesão</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<!-- Stylesheet
+    ================================================== -->
+	<link rel="stylesheet" type="text/css"  href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script src="js/slides.min.jquery.js">
+	
+</script>
+
+<!-- SCRIPT SLIDES DESKTOP -->
+	<script>
+	$(function(){
+		$('#slides').slides({
+			preload: true,
+			preloadImage: 'img/loading.gif',
+			play: 4000,
+			pause: 2000,
+			hoverPause: true,
+			animationStart: function(current){
+				$('.caption').animate({
+					bottom:0
+				},0);
+				if (window.console && console.log) {
+					// example return of current slide number
+					// console.log('animationStart on slide: ', current);
+				};
+			},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},0);
+					if (window.console && console.log) {
+						// example return of current slide number
+						// console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0,
+					},0);
+				}
+			});
+		});
+	</script>		
+		
+<!-- SCRIPT SLIDES-MOB -->
+<script> 
+		$(function(){
+			$('#slides-mob').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 4000,
+				pause: 2000,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+							bottom:0
+					},0);
+					if (window.console && console.log) {
+						// example return of current slide number
+						// console.log('animationStart on slide: ', current);
+					};
+				},
+					animationComplete: function(current){
+						$('.caption').animate({
+							bottom:0
+						},0);
+						if (window.console && console.log) {
+							// example return of current slide number
+								// console.log('animationComplete on slide: ', current);
+						};
+					},
+					slidesLoaded: function() {
+						$('.caption').animate({
+							bottom:0,
+						},0);
+					}
+				});
+		});
+</script>
+	
+<!-- SCRIPT TOPNAV (header responsivo) -->		
+<script>		
+	function myFunction() {
+	  var x = document.getElementById("myLinks");
+	  if (x.style.display === "block") {
+	    x.style.display = "none";
+	  } else {
+	    x.style.display = "block";
+	  }
+	}
+</script>		
+		
+<!-- FONT FACE -->
+
+<style type="text/css">
+
+@font-face{
+	font-family:Roboto-Light;
+	src: url(fonts/Roboto-Light.eot);
+	src: url(fonts/Roboto-Light.ttf);
+	src: url(fonts/Roboto-Light.woff);
+}
+
+@font-face{
+	font-family:Roboto-Bold;
+	src: url(fonts/Roboto-Bold.eot);
+	src: url(fonts/Roboto-Bold.ttf);
+	src: url(fonts/Roboto-Bold.woff);
+}
+
+@font-face{
+	font-family:Roboto-Regular;
+	src: url(fonts/Roboto-Regular.eot);
+	src: url(fonts/Roboto-Regular.ttf);
+	src: url(fonts/Roboto-Regular.woff);
+}
+
+
+
+</style>		
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- HEADER DESKTOP -->
+<div id="header">
+  <div class="container"> 
+    <div class="logo">
+      <img src="img/artesaosdeosasco_original.svg" height="70px" />
+  	</div>
+    
+    <div class="menu">
+    	<ul>
+        	<li><a href="index.html" class="">Buscar</a></li>
+        	<li><a href="indicar.html" class="activebuscar">Indicar Artesão</a></li>
+        	<li><a href="sobre.html" class="">Sobre</a></li>
+        	<li><a href="contato.html" class="">Contato</a></li>
+        	<li><a href="duvidas.html" class="">Dúvidas</a></li>
+    	</ul>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER MOBILE -->
+<div class="topnav">
+	<img class="logo-mob" src="img/artesaosdeosasco_original.svg" height="50px" />
+	  <!-- Navigation links (hidden by default) -->
+	<div id="myLinks">
+   	<a href="index.html">Buscar</a>
+   	<a href="indicar.html">Indicar Artesão</a>
+   	<a href="sobre.html">Sobre</a>
+   	<a href="contato.html">Contato</a>
+   	<a href="duvidas.html">Dúvidas</a>
+	  </div>
+	  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <img src="img/icon-menu.png"/>
+	  </a>
+</div>
+
+<!-- BANNER DESKTOP -->
+<div id="example">
+	<div id="slides">
+		<div class="slides_container">
+      <div class="slide">
+      <a href="indicar.html"><img src="img/banner_slide_indicar.jpg" alt="Slide 2"/></a>
+      <div class="caption">
+        <p class="cap cap-contact">Conhece artesãos em osasco e região?<br>Indique-os e ajude o comércio local.</p>
+      </div>
+    </div>
+  </div>	
+</div>
+			
+</div><!--fim da div banner desaktop-->
+
+<!-- BANNER MOBILE-->
+<div id="example-mob">
+	<div id="slides-mob">
+		<div class="slides_container">
+        <div class="slide">
+          <a href="indicar.html"><img src="img/banner_slide-mob_indicar.jpg" alt="Slide 2"></a>
+          <div class="caption">
+            <p class="cap cap-contact">Conhece artesãos em sua região?<br>Indique-os e ajude o comércio local.</p>
+
+          </div>
+        </div>
+			</div>
+	</div>
+			
+</div><!--fim da div banner Mobile-->
+
+<!-- CONTEUDO -->
+<div id="conteudo">
+  
+  <div class="double-desc">
+    <h5>Informe os dados do artesão que deseja indicar abaixo.</h5>
+    <h5>Se você for o artesão, indique marcando a caixa de seleção.</h5>
+  </div>
+  
+<!--FORM INDICATE DESK-->  
+  
+  <form action="" class="form-indicacao">
+  <div class="form-indicate row-product">
+	<div class="row">
+		<input type="text" class="col-md-6 nome-form" name="name" placeholder="Nome da(o) artesã(o)*" required>
+    	<input type="text" class="col-md-3 celular-form" name="cellphone" placeholder="Celular (WhatsApp)*" required>
+    	<input type="text" class="col-md-3 telefone-form" name="telephone" placeholder="Telefone">
+	</div>
+	<div class="row">
+		<input type="text" class="col-md-12 email-form" name="email" placeholder="E-mail da(o) artesã(o)*" required>
+	</div>
+	
+	<div class="row">
+		<input type="text" class="col-md-12 empresa-form" name="empresa" placeholder="Nome da empresa/coletivo (se houver)*">
+	</div>
+	<div class="row">
+		<input type="text" class="col-md-12 site-form" name="site" placeholder="www.seusite.com.br">
+	</div>
+	<div class="row">
+		<input type="text" class="col-md-12 facebook-form" name="facebook" placeholder="www.facebook.com/suapagina (cole aqui o link)">
+	</div>
+	
+	<div class="row">
+		<input type="text" class="col-md-12 instagram-form" name="instagram" placeholder="www.instagram.com/seuperfil (cole aqui o link)">
+	</div>
+	
+	<div class="row">
+		<select name="city" class="col-md-6 local-form select-cidade"required>
+			<option value="">Selecione a cidade*</option>
+			<option value="osasco">Osasco</option>
+			<option value="barueri">Barueri</option>
+			<option value="itapevi">Itapevi</option>
+			<option value="carapicuiba">Carapicuíba</option>
+			<option value="jandira">Jandira</option>
+			<option value="cotia">Cotia</option>
+			<option value="taboao">Taboão da Serra</option>
+		  </select>
+		  <input type="text" class="col-md-6 local-form" name="bairro" placeholder="Informe o bairro*" required>
+	</div>
+	<br><p style="font-size:14px;color:#C4161C;">Informe apenas um produto por linha. Para acrescentar produtos, clique no sinal (+) abaixo.</p>
+	<div class="row">
+		<input type="text" class="col-md-12 email-form"  name="products" required placeholder="O que ela(e) faz?*">
+		<button class="add-product" type="button"><img src="img/icon-add-product.png"></button>
+	</div>
+  </div>
+  <div class="form-indicate">
+    <div class="row">
+      <input class="col-md-1" name="selfIndicate" type="checkbox" id="selfIndicate"><label class="col-md-11 selfIndicate-label" for="selfIndicate"> Quem está indicando é o próprio artesão</label>
+    </div>
+    <div class="row">
+      <input type="text" class="col-md-4 nome-form indicate-field" name="indicate_name" placeholder="Seu nome*" required>
+        <input type="text" class="col-md-4 celular-form indicate-field" name="indicate_cellphone" placeholder="Seu celular*" required>
+        <input type="text" class="col-md-4 telefone-form indicate-field" name="indicate_telephone" placeholder="Seu telefone">
+    </div>
+    <div class="row">
+      <input type="text" class="col-md-12 email-form indicate-field" name="indicate_email" placeholder="Seu email*" required>
+    </div>
+    <div class="row">
+      <h6 class="col-md-9">*Campos obrigatórios</h6>
+      <button class="button-indicar" type="submit">Indicar</button> 
+    </div>
+  </div>
+  </form>
+  
+<!--FORM INDICATE MOBILE-->   
+  
+  
+  <form action="" class="form-indicacao">
+  <div class="form-indicate-mob row-product">
+	  
+		<input type="text" name="name" placeholder="Nome da(o) artesã(o)*" required>
+		
+    	<input type="text" name="cellphone" placeholder="Celular (WhatsApp)*" required>
+		
+    	<input type="text" name="telephone" placeholder="Telefone">
+
+		<input type="text" name="email" placeholder="E-mail da(o) artesã(o)*" required>
+		
+		<input type="text" class="col-md-12 empresa-form" name="empresa" placeholder="Nome da empresa/coletivo (se houver)*">
+
+		<input type="text" class="col-md-12 site-form" name="site" placeholder="www.seusite.com.br">
+
+		<input type="text" class="col-md-12 facebook-form" name="facebook" placeholder="www.facebook.com/suapagina (cole aqui o link)">
+
+		<input type="text" class="col-md-12 instagram-form" name="instagram" placeholder="www.instagram.com/seuperfil (cole aqui o link)">
+
+		<select name="city" required>
+			<option value="">Selecione a cidade*</option>
+			<option value="osasco">Osasco</option>
+			<option value="barueri">Barueri</option>
+			<option value="itapevi">Itapevi</option>
+			<option value="carapicuiba">Carapicuíba</option>
+			<option value="jandira">Jandira</option>
+			<option value="cotia">Cotia</option>
+			<option value="taboao">Taboão da Serra</option>
+		  </select>
+		  <input type="text" name="bairro" placeholder="Informe o bairro*" required>
+
+<br><p style="font-size:14px;color:#C4161C;">Informe apenas um produto por linha. Para acrescentar produtos, clique no sinal (+) abaixo.</p>
+
+		<input type="text"  name="products" required placeholder="O que ela(e) faz?*">
+		<button class="add-product" type="button"><img src="img/icon-add-product.png"></button>
+
+  </div>
+  
+  <div class="form-indicate-mob">
+
+<input class="col-md-1" name="selfIndicate" type="checkbox" id="selfIndicate">
+<label class="col-md-11 selfIndicate-label" for="selfIndicate"> Quem está indicando é o próprio artesão</label>
+
+
+      <input type="text" class="col-md-4 nome-form indicate-field" name="indicate_name" placeholder="Seu nome*" required>
+        <input type="text" class="col-md-4 celular-form indicate-field" name="indicate_cellphone" placeholder="Seu celular*" required>
+        <input type="text" class="col-md-4 telefone-form indicate-field" name="indicate_telephone" placeholder="Seu telefone">
+
+
+      <input type="text" class="col-md-12 email-form indicate-field" name="indicate_email" placeholder="Seu email*" required>
+
+
+      <h6 class="col-md-9">*Campos obrigatórios</h6>
+      <button class="button-indicar" type="submit">Indicar</button> 
+
+  </div>
+  </form>
+
+	
+	<!-- BANNER FOOTER DESKTOP-->
+	<div id="banner-footer" class="banner-footer-indicar">
+		<a href="duvidas.html"><img src="img/banner_footer_duvidas.jpg"/></a>
+		<p class="btn-banner"><a href="duvidas.html">ver</a></p>
+	</div>
+
+	<!-- BANNER FOOTER TABLET-->	
+	<div id="banner-footer-tab" class="banner-footer-indicar">
+		<a href="duvidas.html"><img src="img/banner_footer-tab_duvidas.jpg"/></a>
+		<p class="btn-banner"><a href="duvidas.html">ver</a></p>
+	</div>
+	
+	<!-- BANNER FOOTER MOBILE-->		
+	<div id="banner-footer-mob" class="banner-footer-indicar">
+		<a href="duvidas.html"><img src="img/banner_footer-mob_duvidas.jpg"/></a>
+		<p class="btn-banner"><a href="duvidas.html">VER</a></p>
+	</div>
+			
+</div>
+
+<!-- FOOTER -->
+<div id="footer" class="footer-indicar">
+	<div class="footer-container">
+		<ul class="menu-footer">
+			<li><a href="sobre.html">Sobre</a></li>
+			<li><a href="indicar.html">Indicar artesão</a></li>
+			<li><a href="contato.html">Contato</a></li>
+			<li><a href="contato.html">Relatar um problema</a></li>
+			<li><a href="duvidas.html">Dúvidas</a></li>
+		</ul>
+		<p class="copyright">© 2020. Todos os direitos reservados.</p>
+		
+		<img class="logo-footer" src="img/PortaldosArtesaos_Negativo.svg" width="115px"/>		
+	</div>	
+</div>
+<script>
+  $('.celular-form').mask('(99) 99999-9999')
+  $('.telefone-form').mask('(99) 9999-9999')
+
+  count = 1;
+	$(document).on('click','.add-product',function(){
+		let template = `<div class="row email_${count}">
+		    <input type="text" class="col-md-12 email-form" required name="products" placeholder="O que ele faz?*">
+		    <button class="remove-product" type="button" onClick="removeProduct(${count})"><img src="img/icon-minus-product.png"></button>
+	    </div>`;
+    $('.row-product').append(template)
+    count++;
+	})
+
+  $(document).on('submit','.form-indicacao',function(event){
+    event.preventDefault();
+    let products = [];
+
+    $('form').serializeArray().map((e)=>{
+      if(e.name == 'products'){
+        products.push(e.value)
+      }
+    })
+    
+    var data = $('form').serializeArray().reduce(function(obj, item) {
+      obj[item.name] = item.value;
+      return obj;
+    }, {});
+
+    data.indicate = {};
+
+    data.products = products;
+    console.log(data.indicate_name)
+    if(!$('#selfIndicate').is(":checked")){
+      data.indicate.name = data.indicate_name;
+      data.indicate.cellphone = data.indicate_cellphone;
+      data.indicate.telephone = data.indicate_telephone;
+      data.indicate.email = data.indicate_email;
+    }
+
+    $.ajax({
+      type: "POST",
+			url: "https://artesao-api.herokuapp.com/artisan",
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+			statusCode: {
+				200: function(req) {
+          console.log(req) 
+          Swal.fire({
+            icon: 'success',
+            title: 'Sucesso!',
+            text: 'Você indicou '+ data.name +' e está contribuindo com os artesãos!',
+            onClose: () => {
+              window.location='index.html'
+            }
+          })
+				}
+			}
+		})
+    console.log(data)
+    event.preventDefault()
+  })
+
+  $(document).on('click','#selfIndicate',function(){
+    if($(this).is(":checked")){
+      $('.indicate-field').attr('disabled',true)
+      $('.indicate-field').css('background-color','#ccc')
+    }else{
+      $('.indicate-field').attr('disabled',false)
+      $('.indicate-field').css('background-color','#fff')
+    }
+  })
+
+  function removeProduct(number){
+    $(`.email_${number}`).remove()
+  }
+</script>
+</body>

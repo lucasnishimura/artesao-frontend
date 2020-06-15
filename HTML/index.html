@@ -34,7 +34,7 @@
 				},0);
 				if (window.console && console.log) {
 					// example return of current slide number
-					console.log('animationStart on slide: ', current);
+					// console.log('animationStart on slide: ', current);
 				};
 			},
 				animationComplete: function(current){
@@ -43,7 +43,7 @@
 					},0);
 					if (window.console && console.log) {
 						// example return of current slide number
-						console.log('animationComplete on slide: ', current);
+						// console.log('animationComplete on slide: ', current);
 					};
 				},
 				slidesLoaded: function() {
@@ -70,7 +70,7 @@
 					},0);
 					if (window.console && console.log) {
 						// example return of current slide number
-						console.log('animationStart on slide: ', current);
+						// console.log('animationStart on slide: ', current);
 					};
 				},
 					animationComplete: function(current){
@@ -79,7 +79,7 @@
 						},0);
 						if (window.console && console.log) {
 							// example return of current slide number
-								console.log('animationComplete on slide: ', current);
+								// console.log('animationComplete on slide: ', current);
 						};
 					},
 					slidesLoaded: function() {
@@ -282,17 +282,20 @@
       <option value="cotia">Cotia</option>
       <option value="taboao">Taboão da Serra</option>
     </select>
-    <select name="bairro">
+    <select name="bairro" id="bairro">
       <option value="">Escolha um bairro</option>
     </select>
-    <select name="Produto">
+    <select name="Produto" id="produto">
       <option value="">Escolha um produto</option>
     </select>
     <p class="button-buscar">buscar</p>
   </div>
 
   <!-- RESULTS -->
-  <div class="results"></div>
+  <div class="results">
+    
+  </div>
+
 	
 	<!-- BANNER FOOTER DESKTOP-->
 	<div id="banner-footer">
@@ -315,7 +318,7 @@
 </div>
 
 <!-- FOOTER -->
-<div id="footer">
+<div id="footer" class="footer-home">
 	<div class="footer-container">
 		<ul class="menu-footer">
 			<li><a href="sobre.html">Sobre</a></li>
@@ -327,22 +330,149 @@
 		<p class="copyright">© 2020. Todos os direitos reservados.</p>
 		
 		<img class="logo-footer" src="img/artesaosdeosasco_negativo.svg" width="163px"/>		
-	
 	</div>	
-	
 </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <span class="close"><img src="img/fechar.svg"/></span>
+	  <div class="modal-body">
+		  <p class="modal-name">Nome do Artesão</p>
+		  <h5 >Localização</h5>
+		  <p class="modal-local">Bairro, Cidade</p>
+		  <h5>Produtos:</h5>
+		  <p class="modal-produtos">Produtos,produto, produto, produto</p>
+		  <h5>Telefone:</h5>
+		  <p class="modal-telefone">(11) 13891-1238</p>
+		  <div class="redes-sociais">
+			  
+		  </div>
+	  </div>
+	</div>
+  
+  </div>
 
 </body>
 <script>
+	// Get the modal
+  var modal = document.getElementById("myModal");
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // When the user clicks the button, open the modal 
+  // $(document).on('click','#myBtn',function(){
+    
+  // })
+
+  // When the user clicks on <span> (x), close the modal
+  $(document).on('click','.close',function(){
+  $('#myModal').css('display','none')
+})
+
 	$(document).on('change','#city',function(){
 		$.ajax({
-			url: "localhost:3333/region/"+$(this).val(),
+			url: "https://artesao-api.herokuapp.com/region/"+$(this).val(),
 			context: document.body,
 			statusCode: {
 				200: function(req) {
-					console.log(req)
+					let html = '<option value="">Escolha um bairro</option>';
+					req.artisan.map((e) => {
+						html += `<option value="${e}">${e}</option>`;
+					})
+					$('#bairro').html(html)
 				}
 			}
 		})
 	})
+  
+  $(document).on('change','#bairro',function(){
+		$.ajax({
+			url: "https://artesao-api.herokuapp.com/products?cidade="+$('#city').val()+"&bairro="+$(this).val(),
+			context: document.body,
+			statusCode: {
+				200: function(req) {
+					let html = '<option value="">Escolha um produto</option>';
+					req.products.map((e) => {
+						html += `<option value="${e}">${e}</option>`;
+					})
+					$('#produto').html(html)
+				}
+			}
+		})
+	})
+  
+  $(document).on('click','.button-buscar',function(){
+	  let bairro = '';
+	  let produto = '';
+    
+    if($('#bairro').val() != ''){
+	    bairro = "&bairro="+$('#bairro').val();
+	}
+    if($('#produto').val() != ''){
+	    produto = "&product="+$('#produto').val();
+	}
+    if($('#city').val() == ''){
+      return false
+    }
+
+		$.ajax({
+			url: "https://artesao-api.herokuapp.com/search?cidade="+$('#city').val()+bairro+produto,
+			context: document.body,
+			statusCode: {
+				200: function(req) {
+          let template = '';
+
+					req.artisan.map((e) => {
+            template += `<div class="item">
+                          <div class="desc-item">
+                            <span class="nome_artesao"><b>${ucfirst(e.name)}</b></span><br><span class="nome_bairro">${e.bairro}, ${e.city}</span><br><span class="nome_produtos">${e.products.join(', ')}</span>
+                          </div>
+                          <div class="icon-item">
+                             <img onclick="sendMessage(${removePhoneMask(e.cellphone)},'${ucfirst(e.name)}')" src="img/whatsapp.svg" class="whatsCard" alt="">
+                            <img onClick="openModal('${e.name}','${e.bairro}','${e.city}','${e.products.join(', ')}','${e.cellphone}')" src="img/btn_info.svg" alt="">
+                          </div>
+                        </div>`;
+          })
+
+          template += (req.artisan.length % 2 == 0) ? '' : '<div class="item"></div>';
+
+          $('.results').html(template)
+				}
+			}
+		})
+	})
+
+  function openModal(nome, bairro, cidade, produtos, celular){
+    $('.modal-name').html(nome)
+    $('.modal-local').html(`${bairro}, ${cidade}`)
+    $('.modal-produtos').html(produtos)
+    $('.modal-telephone').html(celular)
+    $('.redes-sociais').html(`<img onclick="sendMessage(${removePhoneMask(celular)},'${ucfirst(nome)}')" src="img/whatsapp.svg" class="whatsCard" alt="">`)
+
+    $('#myModal').css('display','block')
+  }
+
+  function sendMessage(phone, name){
+    window.open(`https://api.whatsapp.com/send?phone=55${phone}&text=Digite%20sua%20mensagem%20para%20${name}`,'_blank')
+  }
+
+  function ucfirst(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  function removePhoneMask(phone){
+    phone = phone.replace('(','')
+    phone = phone.replace(')','')
+    phone = phone.replace('-','')
+    phone = phone.replace(' ','')
+    return phone;
+  }
 </script>
