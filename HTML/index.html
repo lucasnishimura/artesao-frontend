@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./css/bootstrap/css/bootstrap.min.css" />
 	
 <script src="js/slides.min.jquery.js">
 	
@@ -430,13 +431,25 @@
 			statusCode: {
 				200: function(req) {
           let template = '';
-
 					req.artisan.map((e) => {
-            template += `<div class="item">
-                          <div class="desc-item">
-                            <span class="nome_artesao"><b>${ucfirst(e.name)}</b></span><br><span class="nome_bairro">${e.bairro}, ${e.city}</span><br><span class="nome_produtos">${e.products.join(', ')}</span>
+						let products_string = e.products.join(', ');
+						let product_size = e.products.join(', ').length;
+						let div_empresa = (e.empresa) ? `<span class="empresa_results">${ucfirst(e.empresa)}</span><br>` : '';
+						if(product_size > 20){
+							console.log(products_string)
+							res = products_string.substr(0,20)
+							res += '...';
+						}else{
+							res = products_string;
+						}
+            template += `<div class="col-md-6 item">
+                          <div class="col-md-6 col-lg-6 desc-item">
+														<span class="nome_artesao"><b>${ucfirst(e.name)}</b></span><br>
+														${div_empresa}
+														<span class="nome_bairro">${e.bairro}, ${e.city}</span><br>
+														<span class="nome_produtos">${res}</span>
                           </div>
-                          <div class="icon-item">
+                          <div class="icon-item col-md-6 col-lg-6">
                             <img onClick="openModal('${e.name}','${e.bairro}','${e.city}','${e.products.join(', ')}','${e.cellphone}','${e.empresa}','${e.site}','${e.facebook}','${e.instagram}')" src="img/btn_ver.svg" alt="">
                           </div>
                         </div>`;
@@ -454,26 +467,26 @@
     $('.modal-name').html(nome)
     $('.modal-local').html(`${bairro}, ${cidade}`)
     $('.modal-produtos').html(produtos)
-    $('.modal-telephone').html(celular)
+    $('.modal-telefone').html(celular)
     $('.redes-sociais').html(`<img onclick="sendMessage(${removePhoneMask(celular)},'${ucfirst(nome)}')" src="img/whatsapp.svg" class="whatsCard" alt="">`)
 
-	if(facebook != 'undefined'){
-    	$('.redes-sociais').append(`<a href="${facebook}" target="_blank"><img src="img/facebook.svg" class="whatsCard" alt=""></a>`)
-	}
-	if(instagram != 'undefined'){
-    	$('.redes-sociais').append(`<a href="${instagram}" target="_blank"><img src="img/instagram.svg" class="whatsCard" alt=""></a>`)
-	}
-	if(site != 'undefined'){
-    	$('.redes-sociais').append(`<a href="${site}" target="_blank"><img src="img/site.svg" class="whatsCard" alt=""></a>`)
-	}
-	if(empresa != 'undefined'){
-		$('.modal-empresa').html(empresa)
-	}else{
-		$('.modal-empresa').html('')
-	}
-	
-    $('#myModal').css('display','block')
-  }
+		if(facebook != 'undefined'){
+				$('.redes-sociais').append(`<a href="https://${facebook}" target="_blank"><img src="img/facebook.svg" class="whatsCard" alt=""></a>`)
+		}
+		if(instagram != 'undefined'){
+				$('.redes-sociais').append(`<a href="https://${instagram}" target="_blank"><img src="img/instagram.svg" class="whatsCard" alt=""></a>`)
+		}
+		if(site != 'undefined'){
+				$('.redes-sociais').append(`<a href="https://${site}" target="_blank"><img src="img/site.svg" class="whatsCard" alt=""></a>`)
+		}
+		if(empresa != 'undefined'){
+			$('.modal-empresa').html(empresa)
+		}else{
+			$('.modal-empresa').html('')
+		}
+		
+			$('#myModal').css('display','block')
+		}
 
   function sendMessage(phone, name){
     window.open(`https://api.whatsapp.com/send?phone=55${phone}&text=Digite%20sua%20mensagem%20para%20${name}`,'_blank')
