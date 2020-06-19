@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Artesãos de Osasco e Região • Página Inicial</title>
+<title>Portal dos Artesãos • Indicar Artesão</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -19,7 +19,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 
 <script src="js/slides.min.jquery.js">
 	
@@ -202,11 +201,10 @@
 <div id="example-mob">
 	<div id="slides-mob">
 		<div class="slides_container">
-\
         <div class="slide">
           <a href="indicar.html"><img src="img/banner_slide-mob_indicar.jpg" alt="Slide 2"></a>
           <div class="caption">
-            <p class="cap cap-contact">Conhece artesãos em osasco e região?<br>Indique-os e ajude o comércio local.</p>
+            <p class="cap cap-contact">Conhece artesãos em sua região?<br>Indique-os e ajude o comércio local.</p>
 
           </div>
         </div>
@@ -222,16 +220,34 @@
     <h5>Informe os dados do artesão que deseja indicar abaixo.</h5>
     <h5>Se você for o artesão, indique marcando a caixa de seleção.</h5>
   </div>
+  
+<!--FORM INDICATE DESK-->  
+  
   <form action="" class="form-indicacao">
   <div class="form-indicate row-product">
 	<div class="row">
-		<input type="text" class="col-md-6 nome-form" name="name" placeholder="Nome do artesão*" required>
-    	<input type="text" class="col-md-3 celular-form" name="cellphone" placeholder="Celular*" required>
+		<input type="text" class="col-md-6 nome-form" name="name" placeholder="Nome da(o) artesã(o)*" required>
+    	<input type="text" class="col-md-3 celular-form" name="cellphone" placeholder="Celular (WhatsApp)*" required>
     	<input type="text" class="col-md-3 telefone-form" name="telephone" placeholder="Telefone">
 	</div>
 	<div class="row">
-		<input type="text" class="col-md-12 email-form" name="email" placeholder="E-mail do artesão*" required>
+		<input type="text" class="col-md-12 email-form" name="email" placeholder="E-mail da(o) artesã(o)*" required>
 	</div>
+	
+	<div class="row">
+		<input type="text" class="col-md-12 empresa-form" name="empresa" placeholder="Nome do ateliê/coletivo (se houver)*">
+	</div>
+	<div class="row">
+		<input type="text" class="col-md-12 site-form" name="site" placeholder="www.seusite.com.br">
+	</div>
+	<div class="row">
+		<input type="text" class="col-md-12 facebook-form" name="facebook" placeholder="www.facebook.com/suapagina (cole aqui o link)">
+	</div>
+	
+	<div class="row">
+		<input type="text" class="col-md-12 instagram-form" name="instagram" placeholder="www.instagram.com/seuperfil (cole aqui o link)">
+	</div>
+	
 	<div class="row">
 		<select name="city" class="col-md-6 local-form select-cidade"required>
 			<option value="">Selecione a cidade*</option>
@@ -243,11 +259,12 @@
 			<option value="cotia">Cotia</option>
 			<option value="taboao">Taboão da Serra</option>
 		  </select>
-		  <input type="text" class="col-md-6 local-form" name="bairro" placeholder="Selecione o bairro*" required>
+		  <input type="text" class="col-md-6 local-form" name="bairro" placeholder="Informe o bairro*" required>
 	</div>
+	<br><p style="font-size:14px;color:#C4161C;">Informe apenas um produto por linha. Para acrescentar produtos, clique no sinal (+) abaixo.</p>
 	<div class="row">
-		<input type="text" class="col-md-12 email-form"  name="products" required placeholder="O que ele faz?*">
-		<button class="add-product" type="button">+</button>
+		<input type="text" class="col-md-12 email-form"  name="products" required placeholder="O que ela(e) faz?*">
+		<button class="add-product" type="button"><img src="img/icon-add-product.png"></button>
 	</div>
   </div>
   <div class="form-indicate">
@@ -263,13 +280,11 @@
       <input type="text" class="col-md-12 email-form indicate-field" name="indicate_email" placeholder="Seu email*" required>
     </div>
     <div class="row">
-      <h6 class="col-md-9">*Campos obrigatórios</h6>
+      <h6 class="col-md-9 col-sm-3 col-xs-7">*Campos obrigatórios</h6>
       <button class="button-indicar" type="submit">Indicar</button> 
     </div>
   </div>
   </form>
-  
-
 
 	
 	<!-- BANNER FOOTER DESKTOP-->
@@ -304,19 +319,18 @@
 		</ul>
 		<p class="copyright">© 2020. Todos os direitos reservados.</p>
 		
-		<img class="logo-footer" src="img/artesaosdeosasco_negativo.svg" width="163px"/>		
+		<img class="logo-footer" src="img/PortaldosArtesaos_Negativo.svg" width="115px"/>		
 	</div>	
 </div>
 <script>
   $('.celular-form').mask('(99) 99999-9999')
   $('.telefone-form').mask('(99) 9999-9999')
-  $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 
   count = 1;
 	$(document).on('click','.add-product',function(){
 		let template = `<div class="row email_${count}">
 		    <input type="text" class="col-md-12 email-form" required name="products" placeholder="O que ele faz?*">
-		    <button class="remove-product" type="button" onClick="removeProduct(${count})">-</button>
+		    <button class="remove-product" type="button" onClick="removeProduct(${count})"><img src="img/icon-minus-product.png"></button>
 	    </div>`;
     $('.row-product').append(template)
     count++;
@@ -359,7 +373,7 @@
           Swal.fire({
             icon: 'success',
             title: 'Sucesso!',
-            text: 'Você indicou '+ data.name +' e está contribuindo com os nosso artesões!',
+            text: 'Você indicou '+ data.name +' e está contribuindo com os artesãos!',
             onClose: () => {
               window.location='index.html'
             }

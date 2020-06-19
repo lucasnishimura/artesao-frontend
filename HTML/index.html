@@ -341,6 +341,7 @@
 	  <span class="close"><img src="img/fechar.svg"/></span>
 	  <div class="modal-body">
 		  <p class="modal-name">Nome do Artesão</p>
+		  <p class="modal-empresa">Bairro, Cidade</p>
 		  <h5 >Localização</h5>
 		  <p class="modal-local">Bairro, Cidade</p>
 		  <h5>Produtos:</h5>
@@ -436,8 +437,7 @@
                             <span class="nome_artesao"><b>${ucfirst(e.name)}</b></span><br><span class="nome_bairro">${e.bairro}, ${e.city}</span><br><span class="nome_produtos">${e.products.join(', ')}</span>
                           </div>
                           <div class="icon-item">
-                             <img onclick="sendMessage(${removePhoneMask(e.cellphone)},'${ucfirst(e.name)}')" src="img/whatsapp.svg" class="whatsCard" alt="">
-                            <img onClick="openModal('${e.name}','${e.bairro}','${e.city}','${e.products.join(', ')}','${e.cellphone}')" src="img/btn_info.svg" alt="">
+                            <img onClick="openModal('${e.name}','${e.bairro}','${e.city}','${e.products.join(', ')}','${e.cellphone}','${e.empresa}','${e.site}','${e.facebook}','${e.instagram}')" src="img/btn_ver.svg" alt="">
                           </div>
                         </div>`;
           })
@@ -450,13 +450,28 @@
 		})
 	})
 
-  function openModal(nome, bairro, cidade, produtos, celular){
+  function openModal(nome, bairro, cidade, produtos, celular, empresa, site, facebook, instagram){
     $('.modal-name').html(nome)
     $('.modal-local').html(`${bairro}, ${cidade}`)
     $('.modal-produtos').html(produtos)
     $('.modal-telephone').html(celular)
     $('.redes-sociais').html(`<img onclick="sendMessage(${removePhoneMask(celular)},'${ucfirst(nome)}')" src="img/whatsapp.svg" class="whatsCard" alt="">`)
 
+	if(facebook != 'undefined'){
+    	$('.redes-sociais').append(`<a href="${facebook}" target="_blank"><img src="img/facebook.svg" class="whatsCard" alt=""></a>`)
+	}
+	if(instagram != 'undefined'){
+    	$('.redes-sociais').append(`<a href="${instagram}" target="_blank"><img src="img/instagram.svg" class="whatsCard" alt=""></a>`)
+	}
+	if(site != 'undefined'){
+    	$('.redes-sociais').append(`<a href="${site}" target="_blank"><img src="img/site.svg" class="whatsCard" alt=""></a>`)
+	}
+	if(empresa != 'undefined'){
+		$('.modal-empresa').html(empresa)
+	}else{
+		$('.modal-empresa').html('')
+	}
+	
     $('#myModal').css('display','block')
   }
 
