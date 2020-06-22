@@ -354,7 +354,7 @@
     data.indicate = {};
 
     data.products = products;
-    console.log(data.indicate_name)
+
     if(!$('#selfIndicate').is(":checked")){
       data.indicate.name = data.indicate_name;
       data.indicate.cellphone = data.indicate_cellphone;
@@ -365,6 +365,7 @@
     $.ajax({
       type: "POST",
 			url: "https://artesao-api.herokuapp.com/artisan",
+			// url: "http://localhost:3333/artisan",
       contentType: 'application/json',
       data: JSON.stringify(data),
 			statusCode: {
@@ -378,7 +379,15 @@
               window.location='index.html'
             }
           })
-				}
+				},
+        400: function(req,res,params, onemore){
+          let retorno = JSON.parse(req.responseText)
+          Swal.fire({
+            icon: 'warning',
+            title: 'Ops!',
+            text: retorno.message           
+          })
+        }
 			}
 		})
     console.log(data)
