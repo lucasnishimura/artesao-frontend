@@ -12,7 +12,7 @@ import banner4 from './img/banner_slide_sobre.jpg';
 class DemoCarousel extends Component {
   render() {
     return (
-      <Carousel showThumbs={false} renderArrowNext={'oi'}>
+      <Carousel showThumbs={false}>
         <div>
           <img src={banner1}/>
           <p className="legend">Legend 1</p>

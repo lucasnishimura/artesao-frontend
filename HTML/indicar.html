@@ -419,7 +419,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             title: 'Ops!',
             text: retorno.message           
           })
-        }
+        },
+				409: function(req) {
+					Swal.fire({
+            icon: 'error',
+            title: 'Ops!',
+            text: 'Este artesão já foi cadastrado uma vez! Aguarde até que ele seja aprovado'
+          })
+				},
+				500: function(req) {
+					Swal.fire({
+            icon: 'error',
+            title: 'Ops!',
+            text: 'Erro no servidor'
+          })
+				}
 			}
 		})
     console.log(data)

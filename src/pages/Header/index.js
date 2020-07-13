@@ -3,16 +3,14 @@ import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi'
 
 import './styles.css';
-
-import heroesImg from '../../assets/heroes.png';
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/artesaosdeosasco_original.svg';
 
 export default function Header(){
   return(
     <div id="header">
   <div className="container"> 
     <div className="logo">
-      <img src="img/artesaosdeosasco_original.svg" height="70px" />
+      <img src={logoImg} height="70px" />
   	</div>
     
     <div className="menu">

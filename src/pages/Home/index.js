@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from '../Header'
+import Footer from '../Footer'
+import BannerFooter from '../BannerFooter'
 import Carousel from '../Carousel'
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi'
@@ -14,6 +16,8 @@ export default function Logon(){
       <div>
           <Header />
           <Carousel />
+          <BannerFooter />
+          <Footer />
       </div>
   );
 }

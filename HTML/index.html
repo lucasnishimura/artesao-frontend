@@ -459,11 +459,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		$.ajax({
 			url: "https://artesao-api.herokuapp.com/search?cidade="+$('#city').val()+bairro+produto,
+			// url: "http://localhost:3333/search?cidade="+$('#city').val()+bairro+produto,
 			context: document.body,
 			statusCode: {
 				200: function(req) {
           let template = '';
-					req.artisan.map((e) => {
+					req.artisans.map((e) => {
+
+						const productsArray = [];
+						e.Products.map((valor) => {
+							productsArray.push(valor.name)
+						})
+						e.products = productsArray;
+
 						let products_string = e.products.join(', ');
 						let product_size = e.products.join(', ').length;
 						let div_empresa = (e.empresa) ? `<span class="empresa_results">${ucfirst(e.empresa)}</span><br>` : '';
@@ -487,7 +495,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>`;
           })
 
-          template += (req.artisan.length % 2 == 0) ? '' : '<div class="item"></div>';
+          template += (req.artisans.length % 2 == 0) ? '' : '<div class="item"></div>';
 
           $('.results').html(template)
 				}
