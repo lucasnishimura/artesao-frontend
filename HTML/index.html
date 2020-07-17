@@ -511,11 +511,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     $('.redes-sociais').html(`<img onclick="sendMessage(${removePhoneMask(celular)},'${ucfirst(nome)}')" src="img/whatsapp.svg" class="whatsCard" alt="">`)
 
 		if(facebook != 'undefined'){
+			let base_url = facebook.split('/')
+			if(base_url[0] == 'http:' || base_url[0] == 'https:'){
+				$('.redes-sociais').append(`<a href="${facebook}" target="_blank"><img src="img/facebook.svg" class="whatsCard" alt=""></a>`)
+			}else{
 				$('.redes-sociais').append(`<a href="https://${facebook}" target="_blank"><img src="img/facebook.svg" class="whatsCard" alt=""></a>`)
+			}
 		}
+
 		if(instagram != 'undefined'){
+			let base_url = instagram.split('/')
+			if(base_url[0] == 'http:' || base_url[0] == 'https:'){
+				$('.redes-sociais').append(`<a href="${instagram}" target="_blank"><img src="img/instagram.svg" class="whatsCard" alt=""></a>`)
+			}else{
 				$('.redes-sociais').append(`<a href="https://${instagram}" target="_blank"><img src="img/instagram.svg" class="whatsCard" alt=""></a>`)
+			}
 		}
+		
 		if(site != 'undefined'){
 				$('.redes-sociais').append(`<a href="https://${site}" target="_blank"><img src="img/site.svg" class="whatsCard" alt=""></a>`)
 		}
